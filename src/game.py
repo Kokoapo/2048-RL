@@ -92,3 +92,9 @@ class Game:
             for num in row:
                 state.append(num)
         return state
+
+    def get_grid(self):
+        return self.grid
+
+    def get_size(self):
+        return self.size
