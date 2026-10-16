@@ -1,25 +1,21 @@
 from game import Game
+import pygame
 
-if __name__ == "__main__":
-    game = Game(4)
-    game.print_grid()
+pygame.init()
+screen = pygame.display.set_mode((1600, 900))
+clock = pygame.time.Clock()
+running = True
 
-    print("")
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
 
-    game.step((1, 0))
-    game.print_grid()
+    screen.fill('purple')
 
-    print("")
 
-    game.step((-1, 0))
-    game.print_grid()
 
-    print("")
+    pygame.display.flip()
+    clock.tick(60)
 
-    game.step((0, 1))
-    game.print_grid()
-
-    print("")
-
-    game.step((0, -1))
-    game.print_grid()
+pygame.quit()
